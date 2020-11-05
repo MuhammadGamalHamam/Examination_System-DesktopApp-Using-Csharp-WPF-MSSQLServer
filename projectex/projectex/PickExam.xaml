@@ -1,0 +1,45 @@
+﻿<Window x:Class="projectex.PickExam"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projectex"
+        mc:Ignorable="d"
+        Title="PickExam" Height="550" Width="900">
+    <Grid>
+        <StackPanel>
+            <WrapPanel>
+                <WrapPanel>
+                    <Label FontWeight="Bold" Margin="20" Content="Course Names : "></Label>
+                    <ComboBox Margin="20" x:Name="Courses_cmbBox" Width="300" SelectionChanged="Courses_cmbBox_SelectionChanged"></ComboBox>
+                </WrapPanel>
+                <WrapPanel>
+                    <Label FontWeight="Bold"  Margin="20" Content="Exam Names : "></Label>
+                    <ComboBox Margin="20" x:Name="Exams_cmbBox" Width="300" SelectionChanged="Exams_cmbBox_SelectionChanged" ></ComboBox>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <Label FontWeight="Bold"  Margin="20"  Content="Questions : "></Label>
+                    <ComboBox x:Name="questions_cmbBox" Height="25" Width="300"></ComboBox>
+                </WrapPanel>
+
+            </WrapPanel>
+            <StackPanel>
+                <StackPanel Margin="20">
+                    <DataGrid x:Name="datagrid_showquestionsMCQ"></DataGrid>
+                </StackPanel>
+
+                <StackPanel Margin="20,0,20,20">
+                    <DataGrid x:Name="datagrid_showquestionsTF"></DataGrid>
+                </StackPanel>
+
+                <StackPanel Margin="20,0,20,20">
+                    <DataGrid x:Name="datagrid_showquestionsText"></DataGrid>
+                </StackPanel>
+            </StackPanel>
+            <WrapPanel HorizontalAlignment="Right" Margin="20,0,20,20">
+                <Button  Background="#333333" Foreground="White" x:Name="QuestionSelect_btn" Content="Add To Exam" Click="QuestionSelect_btn_Click"/>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
